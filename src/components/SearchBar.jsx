@@ -20,7 +20,7 @@ class SearchBar extends React.Component{
              <form onSubmit={this.onFormSubmit}>
                 <div className="form-group my-4">
                 <div className='row'>
-                <div className='col-10'>
+                <div className='col-8'>
                 <input
                     type="search"
                     className="form-control"
