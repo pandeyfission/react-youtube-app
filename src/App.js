@@ -11,10 +11,6 @@ class App extends React.Component {
     selectedVideo: "",
   };
 
-  // componentDidMount() {
-  //   this.onTermSubmit("reactjs tutorial");
-  // }
-
   onSelectVideo = (video) => {
     this.setState({ selectedVideo: video });
   };
@@ -24,22 +20,16 @@ class App extends React.Component {
         q: term,
       },
     });
-    this.setState({ videos: res.data.items });
+    this.setState({ videos: res.data.items, selectedVideo: "" });
   };
   render() {
     return (
       <>
         <div className="container">
-          {/* <div className="row yt"> */}
-          {/* <h1 className="text-center col-md-12">
-              <i class="fab fa-yutube-square"></i>
-              &nbsp; video Search Engine
-            </h1> */}
-          {/* </div> */}
           <div className="row my-4">
             <div className="col-md-12">
               <SearchBar onFormSubmit={this.onTermSubmit} />
-              <VideoDetails video={this.state.selectedVideo} />
+              {this.state.selectedVideo ? <VideoDetails video={this.state.selectedVideo} /> : null}
             </div>
             <div className="col-md-4">
               <VideoList
