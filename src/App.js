@@ -29,7 +29,9 @@ class App extends React.Component {
           <div className="row my-4">
             <div className="col-md-12">
               <SearchBar onFormSubmit={this.onTermSubmit} />
-              {this.state.selectedVideo ? <VideoDetails video={this.state.selectedVideo} /> : null}
+              {this.state.selectedVideo ? (
+                <VideoDetails video={this.state.selectedVideo} />
+              ) : null}
             </div>
             <div className="col-md-4">
               <VideoList
